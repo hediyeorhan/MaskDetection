@@ -36,7 +36,7 @@ val_datagen = ImageDataGenerator(rescale=1.0/255)
 val_generator = train_datagen.flow_from_directory(directory=val_dir,target_size=(128,128),class_mode='categorical',batch_size=32)
 
 test_datagen = ImageDataGenerator(rescale=1.0/255)
-test_generator = train_datagen.flow_from_directory(directory=val_dir,target_size=(128,128),class_mode='categorical',batch_size=32)
+test_generator = train_datagen.flow_from_directory(directory=test_dir,target_size=(128,128),class_mode='categorical',batch_size=32)
 
 
 model = tf.keras.models.Sequential([tf.keras.layers.Conv2D(32, (3, 3), activation = "relu", input_shape = (128, 128, 3)),
